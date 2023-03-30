@@ -1,0 +1,8 @@
+- Equipo1:
+    - id: 1
+    - Nombre: "Argentina"
+    - Descripción: "Seleccionado"
+- Equipo2:
+    - id: 2
+    - Nombre: "Arabia Saudita"
+    - Descripción: "Seleccionado"
