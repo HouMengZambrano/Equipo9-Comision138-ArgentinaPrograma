@@ -1,12 +1,22 @@
 import java.util.List;
 
 public class Ronda {
+    private int id;
     private String numero;
     private List<Partido> partidos;
 
-    public Ronda(String numero, List<Partido> partidos) {
+    public Ronda(int id,String numero, List<Partido> partidos) {
+        this.id = id;
         this.numero = numero;
         this.partidos = partidos;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNumero() {

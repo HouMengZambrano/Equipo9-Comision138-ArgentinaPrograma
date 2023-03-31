@@ -1,10 +1,20 @@
 public class Equipo {
+    private int id;
     private String nombre;
     private String descripcion;
 
-    public Equipo(String nombre, String descripcion) {
+    public Equipo(int id,String nombre, String descripcion) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -26,7 +36,8 @@ public class Equipo {
     @Override
     public String toString() {
         return "Equipo{" +
-                "nombre='" + nombre + '\'' +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 '}';
     }

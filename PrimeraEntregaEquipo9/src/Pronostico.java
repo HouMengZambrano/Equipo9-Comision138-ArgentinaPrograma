@@ -52,17 +52,5 @@ public class Pronostico {
         return 0;
     }
 
-
-    public static List<Pronostico> leerPronostico(String archivo) throws FileNotFoundException {
-        List<Pronostico> pronosticos = new ArrayList<>();
-        Scanner scanner = new Scanner(new File(archivo));
-        while(scanner.hasNextLine()){
-            String linea =scanner.nextLine();
-            if(linea.startsWith("-Pronostico")){
-
-            }
-
-        }
-    }
 }
 
