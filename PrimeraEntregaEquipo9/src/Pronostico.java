@@ -5,30 +5,58 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Pronostico {
-    private Partido partido;
-    private Equipo equipo;
+    private int id;
+    private int idPartido;
+    private String nombreEquipo;
     private Resultado resultado;
 
-    public Pronostico(Partido partido, Equipo equipo, Resultado resultado) {
-        this.partido = partido;
-        this.equipo = equipo;
+    public Pronostico(int id, int idPartido, String nombreEquipo, Resultado resultado) {
+        this.id = id;
+        this.idPartido = idPartido;
+        this.nombreEquipo = nombreEquipo;
         this.resultado = resultado;
     }
+    public Pronostico(){
 
-    public Partido getPartido() {
-        return partido;
     }
 
-    public void setPartido(Partido partido) {
-        this.partido = partido;
+    //Tengo que buscar hacer un metodo que me lea el archivo y me instancie el el objeto
+    public List<Pronostico> leerPronosticos(String archivo) throws FileNotFoundException {
+        List<Pronostico> listaPronosticos = new ArrayList<>();
+        Scanner scanner = new Scanner(new File(archivo));
+        while(scanner.hasNextLine()){
+            String linea = scanner.nextLine();
+            if(linea.startsWith("Pronostico")){
+                int idPronostico = Integer.parseInt(scanner.nextLine().trim().split(",")[1]);
+                int idPartido = Integer.parseInt(scanner.nextLine().trim().split(",")[1]);
+                String nombreEquipo = scanner.nextLine().trim().split(",")[1];
+                String enumResultado = scanner.nextLine().trim().split(",")[1];
+                Resultado resultado = Resultado.valueOf(enumResultado);
+                Pronostico pronostico = new Pronostico(idPronostico,idPartido,nombreEquipo,resultado);
+                System.out.println(pronostico);
+                listaPronosticos.add(pronostico);
+            }
+        }
+        scanner.close();
+        return listaPronosticos;
     }
 
-    public Equipo getEquipo() {
-        return equipo;
+
+    public int getIdPartido() {
+        return idPartido;
     }
 
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
+    public void setIdPartido(int idPartido) {
+        this.idPartido = idPartido;
+    }
+
+
+    public String getNombreEquipo() {
+        return nombreEquipo;
+    }
+
+    public void setNombreEquipo(String nombreEquipo) {
+        this.nombreEquipo = nombreEquipo;
     }
 
     public Resultado getResultado() {
@@ -39,11 +67,20 @@ public class Pronostico {
         this.resultado = resultado;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Pronostico{" +
-                "partido=" + partido +
-                ", equipo=" + equipo +
+                "id=" + id +
+                ", idPartido=" + idPartido +
+                ", nombreEquipo='" + nombreEquipo + '\'' +
                 ", resultado=" + resultado +
                 '}';
     }

@@ -1,10 +1,10 @@
-- Pronóstico1
-- id: 1
-- Partido: Partido1 (id:1) (Argentina - Arabia Saudita)
-- Equipo: equipo1 (Argentina)
-- Resultado: GANADOR
-- Pronóstico2
-- id: 2
-- Partido: Partido1 (id:1) (Argentina - Arabia Saudita)
-- Equipo: equipo2 (Arabia Saudita)
-- Resultado: PERDEDOR
+Pronostico1
+id,1
+Partido,1
+Equipo,1
+Resultado,Gana
+Pronostico2
+id,2
+Partido,1
+Equipo,2
+Resultado,Pierde

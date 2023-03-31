@@ -1,3 +1,3 @@
 public enum Resultado {
-    GANA, Empata, Pierde;
+    Gana, Empata, Pierde;
 }

@@ -102,7 +102,7 @@ public class Partido {
             return Resultado.Empata;
         } else if (golesEquipoSeleccionado > golesEquipoNoSeleccionado) {
             System.out.println("Gano: " + equipo.getNombre());
-            return Resultado.GANA;
+            return Resultado.Gana;
         }
         return null;
     };
