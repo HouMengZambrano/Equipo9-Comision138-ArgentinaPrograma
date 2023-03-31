@@ -21,8 +21,9 @@ public class Partido {
         this.golesEquipo1 = golesEquipo1;
         this.golesEquipo2 = golesEquipo2;
     }
-
-    public Partido leerPartido(String archivo) throws FileNotFoundException {
+// Este metodo esa bien pero ahora tengo que hacerlo para que lea mas de un partido;
+    public List<Partido> leerPartidos(String archivo) throws FileNotFoundException{
+        List<Partido> listaPartidos = new ArrayList<>();
         Scanner scanner = new Scanner(new File(archivo));
         Partido partido = null;
         while (scanner.hasNextLine()) {
@@ -42,14 +43,46 @@ public class Partido {
                 int golesEquipo1 = Integer.parseInt(scanner.nextLine().trim().split(",")[1]);
                 int golesEquipo2 = Integer.parseInt(scanner.nextLine().trim().split(",")[1]);
                 partido = new Partido(id, equipo1, equipo2, golesEquipo1, golesEquipo2);
+                System.out.println(partido);
+                listaPartidos.add(partido);
             }
         }
         scanner.close();
-        System.out.println(partido);
-        return partido;
-    }
+        System.out.println(listaPartidos);
+        return listaPartidos;
+    };
 
-    public Resultado resultado(Equipo equipo){
+
+//Con este metodo individual pude desifrar el siguiente Gracias!!!
+//    public Partido leerPartido(String archivo) throws FileNotFoundException {
+//        Scanner scanner = new Scanner(new File(archivo));
+//        Partido partido = null;
+//        while (scanner.hasNextLine()) {
+//            String linea = scanner.nextLine();
+//            if (linea.startsWith("Partido")) {
+//                int id = Integer.parseInt(scanner.nextLine().trim().split(",")[1]);
+//                String[] equipo1Data = scanner.nextLine().trim().split(",");
+//                int idEquipo1 = Integer.parseInt(equipo1Data[0]);
+//                String nombreEquipo1 = equipo1Data[1];
+//                String descripcionEquipo1 = equipo1Data[2];
+//                Equipo equipo1 = new Equipo(idEquipo1, nombreEquipo1, descripcionEquipo1);
+//                String[] equipo2Data = scanner.nextLine().trim().split(",");
+//                int idEquipo2 = Integer.parseInt(equipo2Data[0]);
+//                String nombreEquipo2 = equipo2Data[1];
+//                String descripcionEquipo2 = equipo2Data[2];
+//                Equipo equipo2 = new Equipo(idEquipo2, nombreEquipo2, descripcionEquipo2);
+//                int golesEquipo1 = Integer.parseInt(scanner.nextLine().trim().split(",")[1]);
+//                int golesEquipo2 = Integer.parseInt(scanner.nextLine().trim().split(",")[1]);
+//                partido = new Partido(id, equipo1, equipo2, golesEquipo1, golesEquipo2);
+//            }
+//        }
+//        scanner.close();
+//        System.out.println(partido);
+//        return partido;
+//    }
+
+    //Este metodo resultado quedo GOD!!
+    public Resultado calcularResultado(Equipo equipo){
         int golesEquipoSeleccionado = 0;
         int golesEquipoNoSeleccionado = 0;
 

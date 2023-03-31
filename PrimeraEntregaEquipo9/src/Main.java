@@ -4,12 +4,15 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Partido partido = new Partido();
-        partido = partido.leerPartido("src/resultados.txt");
-
-        Equipo equipo1 = partido.getEquipo1();
-        Equipo equipo2 = partido.getEquipo2();
-        System.out.println(equipo1);
-        System.out.println(equipo2);
+        List<Partido> partidos = partido.leerPartidos("src/resultados.txt");
+        //Quiero accerder al primer partido por su id
+        for (Partido pt: partidos) {
+            if(pt.getId() == 2){
+                Equipo e = pt.getEquipo1();
+                pt.calcularResultado(e);
+            }
+        }
+        //Este for each me permitio acceder a los partidos y sus atributos y metodos!!
 
     }
 }

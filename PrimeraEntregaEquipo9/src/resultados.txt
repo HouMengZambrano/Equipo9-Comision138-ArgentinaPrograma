@@ -4,3 +4,9 @@ id,1
 2,ArabiaSaudita,Selecion
 cant Goles equipo1,1
 cant Goles equipo2,2
+Partido
+id,2
+3,Polonia,Seleccion
+4,Mexico,Seleccion
+cant Goles equipo1,0
+cant Goles equipo2,0
