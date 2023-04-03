@@ -96,13 +96,13 @@ public class Partido {
 
         if(golesEquipoSeleccionado < golesEquipoNoSeleccionado){
             System.out.println("Perdio: " + equipo.getNombre());
-            return Resultado.Pierde;
+            return Resultado.PERDEDOR;
         } else if (golesEquipoSeleccionado == golesEquipoNoSeleccionado) {
             System.out.println("Empato: " + equipo.getNombre());
-            return Resultado.Empata;
+            return Resultado.EMPATE;
         } else if (golesEquipoSeleccionado > golesEquipoNoSeleccionado) {
             System.out.println("Gano: " + equipo.getNombre());
-            return Resultado.Gana;
+            return Resultado.GANADOR;
         }
         return null;
     };

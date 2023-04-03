@@ -1,0 +1,4 @@
+Pronostico
+Argentina,GANADOR,ArabiaSaudita,PERDEDOR
+Pronostico,
+Polonia,EMPATE,Mexico,EMPATE

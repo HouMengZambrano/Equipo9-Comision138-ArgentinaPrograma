@@ -34,14 +34,72 @@ public class Partido {
                 int golesEquipo1 = Integer.parseInt(partido1Data[1]);
                 int golesEquipo2 = Integer.parseInt(partido1Data[2]);
                 partido = new Partido(equipo1, equipo2, golesEquipo1, golesEquipo2);
-                System.out.println(partido);
                 listaPartidos.add(partido);
             }
         }
         scanner.close();
-        System.out.println(listaPartidos);
         return listaPartidos;
     };
+
+    public Resultado calcularResultado(Equipo equipo){
+        int golesEquipoSeleccionado = 0;
+        int golesEquipoNoSeleccionado = 0;
+        Resultado resultado = null;
+
+        if(equipo.getNombre().equals(equipo1.getNombre())){
+            golesEquipoSeleccionado = golesEquipo1;
+            golesEquipoNoSeleccionado = golesEquipo2;
+        }else if (equipo.getNombre().equals(equipo2.getNombre())){
+            golesEquipoSeleccionado = golesEquipo2;
+            golesEquipoNoSeleccionado = golesEquipo1;
+        }
+
+        if(golesEquipoSeleccionado < golesEquipoNoSeleccionado){
+            System.out.println("Perdio: " + equipo.getNombre());
+            resultado = Resultado.PERDEDOR;
+        } else if (golesEquipoSeleccionado == golesEquipoNoSeleccionado) {
+            System.out.println("Empato: " + equipo.getNombre());
+            resultado =  Resultado.EMPATE;
+        } else if (golesEquipoSeleccionado > golesEquipoNoSeleccionado) {
+            System.out.println("Gano: " + equipo.getNombre());
+            resultado = Resultado.GANADOR;
+        }else{
+            System.out.println("Hay un error");
+        }
+        return resultado;
+    };
+
+    public Equipo getEquipo1() {
+        return equipo1;
+    }
+
+    public void setEquipo1(Equipo equipo1) {
+        this.equipo1 = equipo1;
+    }
+
+    public Equipo getEquipo2() {
+        return equipo2;
+    }
+
+    public void setEquipo2(Equipo equipo2) {
+        this.equipo2 = equipo2;
+    }
+
+    public int getGolesEquipo1() {
+        return golesEquipo1;
+    }
+
+    public void setGolesEquipo1(int golesEquipo1) {
+        this.golesEquipo1 = golesEquipo1;
+    }
+
+    public int getGolesEquipo2() {
+        return golesEquipo2;
+    }
+
+    public void setGolesEquipo2(int golesEquipo2) {
+        this.golesEquipo2 = golesEquipo2;
+    }
 
     @Override
     public String toString() {
