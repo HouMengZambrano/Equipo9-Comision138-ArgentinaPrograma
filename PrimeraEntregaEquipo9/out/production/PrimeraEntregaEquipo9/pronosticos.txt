@@ -1,10 +1,10 @@
 Pronostico1
 id,1
 Partido,1
-Equipo,1
+Equipo,Argentina
 Resultado,Gana
 Pronostico2
 id,2
 Partido,1
-Equipo,2
+Equipo,ArabiaSaudita
 Resultado,Pierde

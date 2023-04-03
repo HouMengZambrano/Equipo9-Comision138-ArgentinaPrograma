@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Pronostico {
     private int id;
@@ -33,7 +34,6 @@ public class Pronostico {
                 String enumResultado = scanner.nextLine().trim().split(",")[1];
                 Resultado resultado = Resultado.valueOf(enumResultado);
                 Pronostico pronostico = new Pronostico(idPronostico,idPartido,nombreEquipo,resultado);
-                System.out.println(pronostico);
                 listaPronosticos.add(pronostico);
             }
         }
@@ -85,7 +85,8 @@ public class Pronostico {
                 '}';
     }
 
-    public int puntosGanados(){
+    public int puntosGanados() throws FileNotFoundException {
+
         return 0;
     }
 

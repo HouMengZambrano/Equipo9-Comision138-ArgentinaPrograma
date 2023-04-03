@@ -16,6 +16,7 @@ public class Main {
 
         Pronostico pronostico = new Pronostico();
         List<Pronostico> pronosticos = pronostico.leerPronosticos("src/pronosticos.txt");
+        System.out.println(pronosticos);
         // FUNCIONAAAAA
 
     }
