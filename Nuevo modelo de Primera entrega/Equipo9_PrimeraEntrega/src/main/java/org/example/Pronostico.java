@@ -41,6 +41,7 @@ public class Pronostico {
         this.resultado = resultado;
     }
 
+    //Falta colocar los puntos estaticos
     public void leerPronostico(String archivo) throws FileNotFoundException {
         int puntos = 0;
         Pronostico pronostico = null;
