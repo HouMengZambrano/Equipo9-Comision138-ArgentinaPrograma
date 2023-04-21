@@ -21,6 +21,14 @@ public class Pronostico {
             }
     }
 
+    public Boolean esAcertado(){
+        if(this.resultado.equals(this.partido.calcularResultado(this.equipo))){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
     public Equipo getEquipo() {
         return equipo;
