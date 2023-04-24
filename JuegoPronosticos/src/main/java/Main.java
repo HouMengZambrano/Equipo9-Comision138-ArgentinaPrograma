@@ -26,6 +26,11 @@ public class Main {
     //-----------------------------------JUEGO-------------------------------------//
 
 
+
+
+
+
+
     //---------------------------------METODOS------------------------------------------//
     // Crear la Fase y agregarle la lista de rondas :  FUNCIONA
     public static Fase crearFase() throws IOException {
@@ -154,7 +159,7 @@ public class Main {
         for (Ronda r : fase.getRondas()) {
             System.out.println("Ronda : " + r.getNumero());
             int partidosXRonda = r.getPartidos().size();
-            //Esto es para que solo me muestre los partidos una sola vez
+
             for (Partido partido : r.getPartidos()) {
                 System.out.println(partido.getEquipo1().getNombre() + " vs " + partido.getEquipo2().getNombre());
             }
