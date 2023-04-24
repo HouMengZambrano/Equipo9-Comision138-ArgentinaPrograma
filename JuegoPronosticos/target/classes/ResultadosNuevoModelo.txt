@@ -1,0 +1,9 @@
+Ronda,Primera
+Partido,1,Argentina,1,2,ArabiaSaudita
+Partido,2,Polonia,0,0,Mexico
+Ronda,Segunda
+Partido,3,Argentina,2,0,Mexico
+Partido,4,ArabiaSaudita,0,0,Polonia
+Ronda,Tercera
+Partido,5,Argentina,2,0,Polonia
+Partido,6,ArabiaSaudita,0,2,Mexico
